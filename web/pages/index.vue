@@ -282,6 +282,7 @@ export default {
 		},
 	},
 	async asyncData(context) {
+		console.log(context.$axios, '---')
 		if (context.store.state.index) {
 			// 防止重复加载
 			return

@@ -13,12 +13,14 @@ services:
       - server
       - web
   mongodb:
-    image: mongo:latest
+    image: mongo:4
     container_name: mongodb
     ports: 
       - 27017:27017
+    command: mongod --auth
     volumes: 
-      - ~/data/db:/data/db
+      - /usr/local/docker/mongo/data:/data/db
+      - /usr/local/docker/mongo/configdb:/data/configdb
   server:
     build: ./server
     container_name: server
@@ -35,6 +37,8 @@ services:
     restart: always
     ports:
       - 8000:8000
+    environment:
+      - BASE_URL=http://server:3000/web/api
     external_links:
       - "server:server"
       - "mongodb:mongodb"
