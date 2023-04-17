@@ -7,8 +7,7 @@
   "types": "types/index.d.ts",
   "config": {
     "nuxt": {
-      "host": "0.0.0.0",
-      "port": "8800"
+      "port": "8000"
     }
   },
   "scripts": {

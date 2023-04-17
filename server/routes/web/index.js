@@ -59,7 +59,7 @@ module.exports = (app, plugin, model) => {
             data._doc['time'] = DateFormat(data.time)
             res.send(RequestResult(1, data))
         } else {
-            res.send(RequestResult())
+            res.send(RequestResult(2, 'error'))
         }
     })
 

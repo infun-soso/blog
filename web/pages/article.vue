@@ -109,6 +109,7 @@ export default {
         }
     },
     async asyncData(context){
+	console.log(context.$axios,'=---=')
         const { data } = await context.$axios.get('article', {
             params: { from: 'article' }
         })

@@ -18,7 +18,7 @@ module.exports = {
     ]
   },
   server: {
-    port: 8800
+    port: 8000
   },
   env: {
     baseUrl: process.env.BASE_URL || 'http://server:3000/web/api',
@@ -29,7 +29,8 @@ module.exports = {
   ],
   axios: {
     proxy: true,
-    prefix: '/api', // baseURL
+    baseURL: 'http://server:3000/web/api',
+    browserBaseURL: '/api',
     credentials: true,
   },
   proxy: {
